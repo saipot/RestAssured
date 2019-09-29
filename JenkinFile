@@ -4,15 +4,6 @@ import groovy.json.JsonSlurperClassic
 import java.net.URL  
 // Global vars  
 pipeline {  
-agent any  
- 
-tools {  
-     maven 'maven_3.2.6'  
-    }  
-options {  
-buildDiscarder(logRotator(numToKeepStr: '3'))  
-timeout(time: 1, unit: 'HOURS')  
-}  
 
 parameters {  
 choice(name: 'Load_New_Parameters', choices:['No','Yes'], description: "Do you wish to action a dry run to load new parameters?" )  
