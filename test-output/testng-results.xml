@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="3304" started-at="2019-09-27T09:06:15Z" finished-at="2019-09-27T09:06:19Z">
+  <suite name="Suite" duration-ms="2710" started-at="2019-10-01T08:45:35Z" finished-at="2019-10-01T08:45:37Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="3304" started-at="2019-09-27T09:06:15Z" finished-at="2019-09-27T09:06:19Z">
+    <test name="Test" duration-ms="2710" started-at="2019-10-01T08:45:35Z" finished-at="2019-10-01T08:45:37Z">
       <class name="Com.RestAssured.Project.com.test.restassured.Place_Get_Class">
-        <test-method status="PASS" signature="getMethod()[pri:0, instance:Com.RestAssured.Project.com.test.restassured.Place_Get_Class@3c756e4d]" name="getMethod" duration-ms="3282" started-at="2019-09-27T10:06:15Z" finished-at="2019-09-27T10:06:19Z">
+        <test-method status="PASS" signature="getMethod()[pri:0, instance:Com.RestAssured.Project.com.test.restassured.Place_Get_Class@548b7f67]" name="getMethod" duration-ms="2688" started-at="2019-10-01T09:45:35Z" finished-at="2019-10-01T09:45:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getMethod -->
       </class> <!-- Com.RestAssured.Project.com.test.restassured.Place_Get_Class -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

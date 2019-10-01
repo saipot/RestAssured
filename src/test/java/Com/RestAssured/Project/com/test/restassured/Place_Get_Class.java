@@ -1,11 +1,14 @@
 package Com.RestAssured.Project.com.test.restassured;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 import io.restassured.RestAssured;
 //import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
+
+@Listeners(Com.RestAssured.Project.com.test.restassured.ListenerTest.class)
 public class Place_Get_Class {
 	@Test
     public void getMethod(){
