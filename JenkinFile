@@ -39,8 +39,7 @@ pipeline {
     post {
         always {
             echo 'JENKINS PIPELINE'
-			step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
-        }
+		}
         success {
             echo 'JENKINS PIPELINE SUCCESSFUL'
         }
@@ -53,7 +52,7 @@ pipeline {
         changed {
             echo 'JENKINS PIPELINE STATUS HAS CHANGED SINCE LAST EXECUTION'
         }
-		 always {
+		always {
             step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
         }
     }
