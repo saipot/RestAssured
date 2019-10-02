@@ -33,15 +33,13 @@ pipeline {
             steps {
                 echo '## TODO DEPLOYMENT ##'
             }
-		stage('Results') {
-            steps([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
-               archive 'test-output/*.jar'
-            }
+		
     }
     
     post {
         always {
             echo 'JENKINS PIPELINE'
+			step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
         }
         success {
             echo 'JENKINS PIPELINE SUCCESSFUL'
