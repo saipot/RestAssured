@@ -7,10 +7,9 @@ import io.restassured.RestAssured;
 //import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
-@Test
-@Listeners(Com.RestAssured.Project.com.test.restassured.ListenerTest.class)
 public class Place_Get_Class {
 	
+	@Test
     public void getMethod(){
     	
     	RestAssured.baseURI = "https://maps.googleapis.com";
