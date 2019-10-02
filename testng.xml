@@ -3,11 +3,6 @@
 <suite name="Suite">
   <test name="Test">
   
-  <listeners>
-    <listener class-name="Com.RestAssured.Project.com.test.restassured.ListenerTest"/>
-  </listeners>
-  
-  
     <classes>
       <class name="Com.RestAssured.Project.com.test.restassured.Place_Get_Class"/>
     </classes>
