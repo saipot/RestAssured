@@ -33,10 +33,7 @@ pipeline {
             steps {
                 echo '## TODO DEPLOYMENT ##'
             }
-		stage('Test') {
-		     
-			steps([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
-        }
+		
     }
     
     post {
