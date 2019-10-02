@@ -52,9 +52,7 @@ pipeline {
         changed {
             echo 'JENKINS PIPELINE STATUS HAS CHANGED SINCE LAST EXECUTION'
         }
-		always {
-            step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
-        }
+		
     }
 }
  }
