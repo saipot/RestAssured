@@ -35,9 +35,9 @@ pipeline {
             }
 		
     }
-	post {
-        always {
-            step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
+	stage {
+        steps {
+            echo '([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])'
         }
 }
 }
