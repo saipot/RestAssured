@@ -100,7 +100,7 @@
                             <goal>deploy-file</goal>
                         </goals>
                         <configuration>
-                            <file>Deploy\src</file>
+                            <file>Deploy\*.File</file>
                             <groupId>${project.groupId}</groupId>
                             <artifactId>${project.artifactId}</artifactId>
                             <version>${project.version}</version>
