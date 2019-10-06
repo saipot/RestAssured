@@ -100,19 +100,20 @@
                             <goal>deploy-file</goal>
                         </goals>
                         <configuration>
-                            <groupId>Com.RestAssured.Project</groupId>
-                            <artifactId>com.test.restassured</artifactId>
-                            <version>0.0.1-SNAPSHOT</version>
-                            <packaging>jar</packaging>
+                            <file>${file}</file>
+                            <groupId>${groupId}</groupId>
+                            <artifactId>${artifactId}</artifactId>
+                            <version>${version}</version>
+                            <packaging>${packaging}</packaging>
                             <generatePom>true</generatePom>
-                            <repositoryId>restassured</repositoryId>
-                            <url>http://localhost:8081/content/repositories/restassured</url>
+                            <repositoryId>${targetRepositoryID}</repositoryId>
+                            <url>${baseNexusURL}/content/repositories/${targetRepositoryID}</url>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
-       
-			</plugins>
+        </plugins>
+
 		</pluginManagement>
 	</build>
 </project>
