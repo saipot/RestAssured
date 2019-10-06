@@ -101,10 +101,10 @@
                         </goals>
                         <configuration>
                             <file>${file}</file>
-                            <groupId>${groupId}</groupId>
-                            <artifactId>${artifactId}</artifactId>
-                            <version>${version}</version>
-                            <packaging>${packaging}</packaging>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>${project.artifactId}</artifactId>
+                            <version>${project.version}</version>
+                            <packaging>${project.packaging}</packaging>
                             <generatePom>true</generatePom>
                             <repositoryId>${targetRepositoryID}</repositoryId>
                             <url>${baseNexusURL}/content/repositories/${targetRepositoryID}</url>
