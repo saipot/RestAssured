@@ -91,7 +91,26 @@
 							<configuration>
 								<skip>true</skip>
 							</configuration>
-						</execution>
+							</execution>
+							<execution>
+							<id>deploy-node-modules-artifact</id>
+							<phase>deploy</phase>
+							
+							<goals>
+								<goal>deploy-file</goal>
+							</goals>
+						
+						<configuration>
+								<file>src</file>
+								<groupId>${project.groupId}</groupId>
+								<artifactId>${project.artifactId}</artifactId>
+								<version>${project.version}</version>
+								<packaging>${project.packaging}</packaging>
+								<generatePom>true</generatePom>
+								<repositoryId>${targetRepositoryID}</repositoryId>
+								<url>${baseNexusURL}/content/repositories/${targetRepositoryID}</url>
+							</configuration>
+		            </execution>
 					</executions>
 				</plugin>
 			</plugins>
