@@ -97,7 +97,7 @@
 							<phase>deploy</phase>
 							
 							<goals>
-								<goal>deploy-file</goal>
+								<goal>src</goal>
 							</goals>
 						
 						<configuration>
