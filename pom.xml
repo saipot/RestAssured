@@ -72,7 +72,7 @@
 					<version>9.0.26</version>
 					<configuration>
 						<url>http://localhost:8081/manager/text</url>
-						<path>/DeployMavenToTomcat</path>
+						<path>/com.test.restassured</path>
 						<!-- Set update to true to avoid exist war package can not be override 
 							error -->
 						<update>true</update>
