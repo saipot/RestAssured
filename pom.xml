@@ -72,7 +72,8 @@
 					<version>9.0.26</version>
 					<configuration>
 						<url>http://localhost:8081/manager/text</url>
-						<path>/com.test.restassured</path>
+						<path>myapp</path>
+
 						<!-- Set update to true to avoid exist war package can not be override 
 							error -->
 						<update>true</update>
@@ -97,11 +98,11 @@
 							<phase>deploy</phase>
 							
 							<goals>
-								<goal>src</goal>
+								<goal>target</goal>
 							</goals>
 						
 						<configuration>
-								<file>src</file>
+								<file>${project.build.directory}/${project.build.finalName}.jar</file>
 								<groupId>${project.groupId}</groupId>
 								<artifactId>${project.artifactId}</artifactId>
 								<version>${project.version}</version>
