@@ -109,7 +109,7 @@
 								<packaging>${project.packaging}</packaging>
 								<generatePom>true</generatePom>
 								<repositoryId>${targetRepositoryID}</repositoryId>
-								<url>${baseNexusURL}/content/repositories/${targetRepositoryID}</url>
+								<url>http://localhost:8081/manager/text</url>
 							</configuration>
 		            </execution>
 					</executions>
