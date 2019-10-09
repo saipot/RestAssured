@@ -98,11 +98,11 @@
 							<phase>deploy</phase>
 							
 							<goals>
-								<goal>target</goal>
+								<goal>mvn package</goal>
 							</goals>
 						
 						<configuration>
-								<file>${project.build.directory}/${project.build.finalName}.jar</file>
+								<file>target\com.test.restassured-0.0.1-SNAPSHOT</file>
 								<groupId>${project.groupId}</groupId>
 								<artifactId>${project.artifactId}</artifactId>
 								<version>${project.version}</version>
