@@ -41,7 +41,7 @@ pipeline {
         always {
            
             step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
-			archive 'target/com.test.restassured-0.0.1-SNAPSHOT.jar'
+			archiveArtifacts artifacts: 'target/com.test.restassured-0.0.1-SNAPSHOT.jar', allowEmptyArchive: true
         }
        
 }
