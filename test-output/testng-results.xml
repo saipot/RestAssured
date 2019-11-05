@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="19226" started-at="2019-11-04T22:39:19Z" finished-at="2019-11-04T22:39:38Z">
+  <suite name="Default suite" duration-ms="7175" started-at="2019-11-05T13:35:22Z" finished-at="2019-11-05T13:35:29Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="19226" started-at="2019-11-04T22:39:19Z" finished-at="2019-11-04T22:39:38Z">
+    <test name="Default test" duration-ms="7175" started-at="2019-11-05T13:35:22Z" finished-at="2019-11-05T13:35:29Z">
       <class name="Com.RestAssured.Project.com.test.restassured.Place_Get_Class">
-        <test-method status="PASS" signature="getMethod()[pri:0, instance:Com.RestAssured.Project.com.test.restassured.Place_Get_Class@1035e27]" name="getMethod" duration-ms="19209" started-at="2019-11-04T22:39:19Z" finished-at="2019-11-04T22:39:38Z">
+        <test-method status="PASS" signature="getMethod()[pri:0, instance:Com.RestAssured.Project.com.test.restassured.Place_Get_Class@1035e27]" name="getMethod" duration-ms="7162" started-at="2019-11-05T13:35:22Z" finished-at="2019-11-05T13:35:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getMethod -->

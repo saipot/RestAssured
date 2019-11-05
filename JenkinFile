@@ -43,6 +43,7 @@ pipeline {
             step([$class: 'Publisher', reportFilenamePattern: '**/custom/testng-results.xml'])
 			archive 'test-output/*.jar'
         }
+       
 }
      }
 
