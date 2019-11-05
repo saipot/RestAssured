@@ -41,7 +41,7 @@ pipeline {
         always {
            
             step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
-			archive 'test-output/*.jar'
+			archive 'target/*.jar'
         }
        
 }
