@@ -35,22 +35,23 @@ pipeline {
             }
 	    }
 	   	
-    }
+    
 	
-}
-    post {
-        always {
-           
+
+  
+        stage('reports') {
+           steps {
             step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
 			archiveArtifacts artifacts: 'target/com.test.restassured-0.0.1-SNAPSHOT.jar', allowEmptyArchive: true
         }
+	}
 	 stage('Email notification') {
 	    steps {
 	    mail bcc: '', body: 'Test job from jenkins', cc: '', from: '', replyTo: '', subject: 'jenkins job', to: 'sailu.kaushik@gmail.com'
 	     }
-	}
-       
+	
+       }
 }
      
 
- 
+ }
