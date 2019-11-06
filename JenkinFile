@@ -33,7 +33,12 @@ pipeline {
             steps {
                 echo '## TODO DEPLOYMENT ##'
             }
-		
+	    }
+	    stage('Email notification') {
+	    steps {
+	    mail bcc: '', body: 'Test job from jenkins', cc: '', from: '', replyTo: '', subject: 'jenkins job', to: 'sailu.kaushik@gmail.com'
+	     }
+	}	
     }
 	
 }
