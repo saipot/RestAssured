@@ -38,6 +38,18 @@ pipeline {
             echo "Pipeline currentResult: ${currentBuild.currentResult}"
         }
     }
+     stage('Package') {
+            steps {
+                echo 'Packaging'
+                bat 'mvn package -DskipTests'
+            }
+        }
+	stage('currentPackage') {
+      steps {
+            echo "Pipeline result: '${env.JOB_NAME}' (${env.BUILD_NUMBER})"
+            echo "Pipeline currentResult: ${currentBuild.currentResult}"
+        }
+    }
     stage('reports') {
            steps {
             step([$class: 'Publisher', reportFilenamePattern: '**/index.html'])
