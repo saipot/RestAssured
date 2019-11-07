@@ -34,23 +34,21 @@ pipeline {
                 echo '## TODO DEPLOYMENT ##'
             }
 	    }
-	   	
-    
-	
-
-  
-        stage('reports') {
+	 stage('reports') {
            steps {
             step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
 			archiveArtifacts artifacts: 'target/com.test.restassured-0.0.1-SNAPSHOT.jar', allowEmptyArchive: true
         }
 	}
-	 stage('Email notification') {
-	    steps {
-	    mail bcc: '', body: 'Test job from jenkins', cc: '', from: '', replyTo: '', subject: 'jenkins job', to: 'sailu.kaushik@gmail.com'
-	     }
-	
-       }
+	stage('Email notification') {
+          steps{
+             mail (to: 'sailu.kaushik@gmail.com',
+             subject: "Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) is waiting for input",
+             body: "Please go to ${env.BUILD_URL}.");
+             input 'Ready to go?';   
+   }
+ }
+	 
 }
      
 
