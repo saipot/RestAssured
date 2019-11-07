@@ -10,39 +10,85 @@ pipeline {
                 echo 'Checkout'
             }
         }
+		
         stage('Build') {
             steps {
                 echo 'Clean Build'
                 bat 'mvn clean compile'
             }
         }
+		}
+		post {
+        always {
+            echo "Pipeline result: ${currentBuild.result}"
+            echo "Pipeline currentResult: ${currentBuild.currentResult}"
+        }
+    }
+    stages {
         stage('Test') {
             steps {
                 echo 'Testing'
                 bat 'mvn test'
             }
         }
-       
+		}
+		post {
+        always {
+            echo "Pipeline result: ${currentBuild.result}"
+            echo "Pipeline currentResult: ${currentBuild.currentResult}"
+        }
+    }
+     
+    stages {   
         stage('Package') {
             steps {
                 echo 'Packaging'
                 bat 'mvn package -DskipTests'
             }
         }
+		}
+		post {
+        always {
+            echo "Pipeline result: ${currentBuild.result}"
+            echo "Pipeline currentResult: ${currentBuild.currentResult}"
+        }
+    }
+    stages { 
         stage('Deploy') {
             steps {
                 echo '## TODO DEPLOYMENT ##'
             }
-		
-    }
-	
-}
-    post {
+	    }
+		}
+		post {
         always {
-            step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
-			archive 'test-output/*.jar'
+            echo "Pipeline result: ${currentBuild.result}"
+            echo "Pipeline currentResult: ${currentBuild.currentResult}"
         }
+    }
+    stages {
+	   	stage('reports') {
+           steps {
+            step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
+			archiveArtifacts artifacts: 'target/com.test.restassured-0.0.1-SNAPSHOT.jar', allowEmptyArchive: true
+        }
+	}
+	}
+	post {
+        always {
+            echo "Pipeline result: ${currentBuild.result}"
+            echo "Pipeline currentResult: ${currentBuild.currentResult}"
+        }
+    }
+stages {     
+stage('Email notification') {
+steps{
+mail (to: 'sailu.kaushik@gmail.com',
+ subject: "Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) is waiting for input",
+         body: "Please go to ${env.BUILD_URL}.");
+   input 'Ready to go?';   
+   }
+ }
 }
-     }
-
- 
+}
+} 
