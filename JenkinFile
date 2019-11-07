@@ -24,14 +24,14 @@ pipeline {
             echo "Pipeline currentResult: ${currentBuild.currentResult}"
         }
     }
-    stages {
+    
         stage('Test') {
             steps {
                 echo 'Testing'
                 bat 'mvn test'
             }
         }
-		}
+		
 		post {
         always {
             echo "Pipeline result: ${currentBuild.result}"
