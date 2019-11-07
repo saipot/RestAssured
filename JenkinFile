@@ -17,9 +17,9 @@ pipeline {
                 bat 'mvn clean compile'
             }
         }
-		}
-		post {
-        always {
+		
+		stage('currentBuild') {
+      steps {
             echo "Pipeline result: ${currentBuild.result}"
             echo "Pipeline currentResult: ${currentBuild.currentResult}"
         }
@@ -32,9 +32,9 @@ pipeline {
             }
         }
 		
-		post {
-        always {
-            echo "Pipeline result: ${currentBuild.result}"
+		stage('currentTest') {
+      steps {
+            echo "Pipeline result: ${currentTest.result}"
             echo "Pipeline currentResult: ${currentBuild.currentResult}"
         }
     }
@@ -46,10 +46,9 @@ pipeline {
                 bat 'mvn package -DskipTests'
             }
         }
-		
-		post {
-        always {
-            echo "Pipeline result: ${currentBuild.result}"
+			stage('currentPackage') {
+      steps {
+            echo "Pipeline result: ${currentPackage.result}"
             echo "Pipeline currentResult: ${currentBuild.currentResult}"
         }
     }
@@ -60,9 +59,9 @@ pipeline {
             }
 	    }
 		
-		post {
-        always {
-            echo "Pipeline result: ${currentBuild.result}"
+			stage('currentDeploy') {
+      steps {
+            echo "Pipeline result: ${currentDeploy.result}"
             echo "Pipeline currentResult: ${currentBuild.currentResult}"
         }
     }
@@ -74,9 +73,9 @@ pipeline {
         }
 	}
 	
-	post {
-        always {
-            echo "Pipeline result: ${currentBuild.result}"
+		stage('currentreports') {
+      steps {
+            echo "Pipeline result: ${currentreports.result}"
             echo "Pipeline currentResult: ${currentBuild.currentResult}"
         }
     }
