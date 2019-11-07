@@ -40,8 +40,8 @@ pipeline {
     }
     stage('reports') {
            steps {
-            step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
-			archiveArtifacts artifacts: 'target/com.test.restassured-0.0.1-SNAPSHOT.jar', allowEmptyArchive: true
+            step([$class: 'Publisher', reportFilenamePattern: '**/index.html'])
+			archiveArtifacts artifacts: 'target/*.jar', allowEmptyArchive: true
         }
 	}
 	
