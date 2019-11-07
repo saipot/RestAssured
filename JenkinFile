@@ -39,48 +39,48 @@ pipeline {
         }
     }
      
-    stages {   
+   
         stage('Package') {
             steps {
                 echo 'Packaging'
                 bat 'mvn package -DskipTests'
             }
         }
-		}
+		
 		post {
         always {
             echo "Pipeline result: ${currentBuild.result}"
             echo "Pipeline currentResult: ${currentBuild.currentResult}"
         }
     }
-    stages { 
+ 
         stage('Deploy') {
             steps {
                 echo '## TODO DEPLOYMENT ##'
             }
 	    }
-		}
+		
 		post {
         always {
             echo "Pipeline result: ${currentBuild.result}"
             echo "Pipeline currentResult: ${currentBuild.currentResult}"
         }
     }
-    stages {
+ 
 	   	stage('reports') {
            steps {
             step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
 			archiveArtifacts artifacts: 'target/com.test.restassured-0.0.1-SNAPSHOT.jar', allowEmptyArchive: true
         }
 	}
-	}
+	
 	post {
         always {
             echo "Pipeline result: ${currentBuild.result}"
             echo "Pipeline currentResult: ${currentBuild.currentResult}"
         }
     }
-stages {     
+    
 stage('Email notification') {
 steps{
 mail (to: 'sailu.kaushik@gmail.com',
@@ -90,5 +90,5 @@ mail (to: 'sailu.kaushik@gmail.com',
    }
  }
 }
-}
+
 
