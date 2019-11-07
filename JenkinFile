@@ -20,7 +20,7 @@ pipeline {
 		
 		stage('currentBuild') {
       steps {
-            echo "Pipeline result: ${currentBuild.result}"
+            echo "Pipeline result: '${env.JOB_NAME}' (${env.BUILD_NUMBER})"
             echo "Pipeline currentResult: ${currentBuild.currentResult}"
         }
     }
@@ -34,39 +34,11 @@ pipeline {
 		
 		stage('currentTest') {
       steps {
-            echo "Pipeline result: ${currentTest.result}"
+            echo "Pipeline result: '${env.JOB_NAME}' (${env.BUILD_NUMBER})"
             echo "Pipeline currentResult: ${currentBuild.currentResult}"
         }
     }
-     
-   
-        stage('Package') {
-            steps {
-                echo 'Packaging'
-                bat 'mvn package -DskipTests'
-            }
-        }
-			stage('currentPackage') {
-      steps {
-            echo "Pipeline result: ${currentPackage.result}"
-            echo "Pipeline currentResult: ${currentBuild.currentResult}"
-        }
-    }
- 
-        stage('Deploy') {
-            steps {
-                echo '## TODO DEPLOYMENT ##'
-            }
-	    }
-		
-			stage('currentDeploy') {
-      steps {
-            echo "Pipeline result: ${currentDeploy.result}"
-            echo "Pipeline currentResult: ${currentBuild.currentResult}"
-        }
-    }
- 
-	   	stage('reports') {
+    stage('reports') {
            steps {
             step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
 			archiveArtifacts artifacts: 'target/com.test.restassured-0.0.1-SNAPSHOT.jar', allowEmptyArchive: true
@@ -75,7 +47,7 @@ pipeline {
 	
 		stage('currentreports') {
       steps {
-            echo "Pipeline result: ${currentreports.result}"
+            echo "Pipeline result: '${env.JOB_NAME}' (${env.BUILD_NUMBER})"
             echo "Pipeline currentResult: ${currentBuild.currentResult}"
         }
     }
@@ -89,5 +61,11 @@ mail (to: 'sailu.kaushik@gmail.com',
    }
  }
 }
+post {
+        always {
+            echo "Pipeline result: '${env.JOB_NAME}' (${env.BUILD_NUMBER})"
+            echo "Pipeline currentResult: ${currentBuild.currentResult}"
+        }
+    }
 }
 
