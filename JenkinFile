@@ -52,7 +52,7 @@ pipeline {
 }
 post {
         always {
-            echo "Pipeline result: ${currentBuild.result}"
+            echo "Pipeline result: '${env.JOB_NAME}' (${env.BUILD_NUMBER})"
             echo "Pipeline currentResult: ${currentBuild.currentResult}"
         }
     }
