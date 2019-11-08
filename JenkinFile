@@ -74,6 +74,7 @@ subject: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
    )
  }
 }
+}
 post {
         always {
             echo "Pipeline result: '${env.JOB_NAME}' (${env.BUILD_NUMBER})"
@@ -81,4 +82,4 @@ post {
         }
     }
 }
-}
+
