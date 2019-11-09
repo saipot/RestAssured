@@ -15,12 +15,14 @@ pipeline {
                 
                 expression { params.RestAssured == 'BUILD FAILURE' }
             }
-	    
-            step {
-                echo "Pipeline result: '${env.JOB_NAME}' (${env.BUILD_NUMBER})"
+	    }
+            post {
+        always {
+            echo "Pipeline result: ${currentBuild.result}"
             echo "Pipeline currentResult: ${currentBuild.currentResult}"
-            }
         }
     }
-}
-}
+     
+    }
+
+
