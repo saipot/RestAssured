@@ -20,7 +20,7 @@ public class Place_Get_Class {
     when().
         get("https://maps.googleapis.com/maps/api/place/textsearch/json").
     then().
-        assertThat().statusCode(200);
+        assertThat().statusCode(201);
         
     }
 
