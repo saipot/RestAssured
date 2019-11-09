@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    options {
+retry(3)
+}
 	 
     tools {  
      maven 'maven_3.6.2'  
