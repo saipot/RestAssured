@@ -74,6 +74,7 @@ mail (to: 'sailu.kaushik@gmail.com',
    input 'Ready to go?'; 
 }
 }
+}
 post {
         always {
             echo "Pipeline result: '${env.JOB_NAME}' (${env.BUILD_NUMBER})"
@@ -82,4 +83,4 @@ post {
     }
 }
 
-}
+
