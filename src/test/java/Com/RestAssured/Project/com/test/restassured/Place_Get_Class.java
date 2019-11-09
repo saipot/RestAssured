@@ -21,7 +21,6 @@ public class Place_Get_Class {
         get("https://maps.googleapis.com/maps/api/place/textsearch/json").
     then().
         assertThat().statusCode(200);
-        
     }
 
 }
