@@ -16,6 +16,7 @@ pipeline {
                 expression { params.RestAssured == 'BUILD FAILURE' }
             }
 	    }
+	    }
             post {
         always {
             echo "Pipeline result: ${currentBuild.result}"
@@ -24,6 +25,6 @@ pipeline {
     }
      
     }
-    }
+    
 
 
