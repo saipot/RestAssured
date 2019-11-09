@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage ('Build') {
 	steps {
-	bat 'mvn clean compile'
+	
             when {
                 
                 expression { params.RestAssured == 'BUILD FAILURE' }
