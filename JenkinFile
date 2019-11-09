@@ -17,6 +17,7 @@ pipeline {
             }
 	    }
 	    }
+		}
             post {
         always {
             echo "Pipeline result: ${currentBuild.result}"
@@ -24,7 +25,6 @@ pipeline {
         }
     }
      
-    }
+    
     
 }
-
